@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres salir a caminar?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        @media (max-width: 600px) {
+            body {
+                margin-top: 20px;
+            }
+            button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>¿Quieres salir a caminar?</h1>
+    <button id="siButton">Sí</button>
+    <button id="noButton">No</button>
+
+    <script>
+        const siButton = document.getElementById('siButton');
+        const noButton = document.getElementById('noButton');
+
+        siButton.addEventListener('click', function() {
+            alert('¡Sabía que aceptarías!');
+        });
+
+        noButton.addEventListener('mouseover', function() {
+            const randomX = Math.floor(Math.random() * window.innerWidth);
+            const randomY = Math.floor(Math.random() * window.innerHeight);
+            noButton.style.position = 'absolute';
+            noButton.style.left = `${randomX}px`;
+            noButton.style.top = `${randomY}px`;
+        });
+    </script>
+</body>
+</html>
